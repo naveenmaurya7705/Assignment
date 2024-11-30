@@ -1,48 +1,47 @@
 {
   "formData": [
     {
-      "id": "52fb",
-      "productionPerDay": "13",
-      "totalOrderQuantity": "5431",
+      "id": "9751",
+      "productionPerDay": "2",
+      "totalOrderQuantity": "42",
       "fabrics": [
         {
-          "fabricName": "BAG VOILE",
-          "perPieceRequirement": "6.5",
+          "fabricName": "SHIFILLI",
+          "perPieceRequirement": "343",
           "unit": "M",
           "processes": [
-            "DYING",
-            "PRINTING"
+            "DYING"
           ],
           "colorAndQuantity": [
             {
               "color": "red",
-              "quantity": "4"
+              "quantity": "233"
             },
             {
-              "color": "pink",
-              "quantity": "4"
+              "color": "green",
+              "quantity": "20"
             }
           ],
           "stagesToSkip": [
-            "SUBMISSION",
-            "PRODUCTION"
+            "TOP"
           ]
         }
       ],
       "majorFabric": "WISTERIA VOLIE",
       "chinaFabricPresent": true,
       "chinaFabrics": [
-        "BAG VOILE",
-        "FP001"
+        "LACES"
       ],
       "trims": [
         {
-          "trim": ""
+          "trim": "LABEL COPPER"
+        },
+        {
+          "trim": "STICKER"
         }
       ],
       "accessories": [
-        "WASHCARE LABEL",
-        "ZIP"
+        "WASHCARE LABEL"
       ]
     }
   ]

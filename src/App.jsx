@@ -200,18 +200,11 @@ const App = () => {
 
         {/* Trims Section */}
         <TrimsSection
-        trims={trims}
-        onAddTrim={() => setTrims([...trims, { trim: "" }])}
-        onUpdateTrim={(index, value) => {
-          const updatedTrims = [...trims];
-          updatedTrims[index] = { trim: value };
-          setTrims(updatedTrims);
-        }}
-        onRemoveTrim={(indexToRemove) => {
-          const updatedTrims = trims.filter((_, index) => index !== indexToRemove);
-          setTrims(updatedTrims);
-        }}
-      />
+  trims={trims}
+  onAddTrim={addTrim}
+  onUpdateTrim={updateTrim}
+  onRemoveTrim={removeTrim}
+/>
 
         {/* Accessories Section */}
         <AccessoriesSection
