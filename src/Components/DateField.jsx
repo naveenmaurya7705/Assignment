@@ -2,8 +2,8 @@ import React from "react";
 
 const DateField = ({ label, name, defaultValue }) => {
   return (
-    <div>
-      <label>{label}</label>
+    <div className="date">
+      <label>{label}: </label><br /><br />
       <input type="date" name={name} defaultValue={defaultValue} required />
     </div>
   );

@@ -1,0 +1,49 @@
+{
+  "formData": [
+    {
+      "id": "52fb",
+      "productionPerDay": "13",
+      "totalOrderQuantity": "5431",
+      "fabrics": [
+        {
+          "fabricName": "BAG VOILE",
+          "perPieceRequirement": "6.5",
+          "unit": "M",
+          "processes": [
+            "DYING",
+            "PRINTING"
+          ],
+          "colorAndQuantity": [
+            {
+              "color": "red",
+              "quantity": "4"
+            },
+            {
+              "color": "pink",
+              "quantity": "4"
+            }
+          ],
+          "stagesToSkip": [
+            "SUBMISSION",
+            "PRODUCTION"
+          ]
+        }
+      ],
+      "majorFabric": "WISTERIA VOLIE",
+      "chinaFabricPresent": true,
+      "chinaFabrics": [
+        "BAG VOILE",
+        "FP001"
+      ],
+      "trims": [
+        {
+          "trim": ""
+        }
+      ],
+      "accessories": [
+        "WASHCARE LABEL",
+        "ZIP"
+      ]
+    }
+  ]
+}

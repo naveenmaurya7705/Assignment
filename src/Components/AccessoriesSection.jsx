@@ -24,8 +24,8 @@ const AccessoriesSection = ({
   };
 
   return (
-    <div style={{ marginTop: "20px" }}>
-      <h3>Accessories</h3>
+    <div style={{ padding:" 20px 10px", marginTop: "20px" ,  backgroundColor: "#e6e2e2e7"}}>
+      <h3>Accessories :</h3>
 
       {/* Display selected accessories */}
       <div
@@ -50,17 +50,9 @@ const AccessoriesSection = ({
             <span>{accessory}</span> {/* Display accessory text */}
             <button
               onClick={() => onRemoveAccessory(accessory)}
-              style={{
-                marginLeft: "10px",
-                backgroundColor: "red",
-                color: "white",
-                border: "none",
-                cursor: "pointer",
-                padding: "5px",
-                borderRadius: "50%",
-              }}
+              className="x-button"
             >
-              *
+              X
             </button>
           </div>
         ))}

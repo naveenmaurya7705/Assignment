@@ -32,8 +32,8 @@ const TrimsSection = () => {
   };
 
   return (
-    <div>
-      <h3>Trims</h3>
+    <div style={{}}>
+      <h3>Trims :</h3>
       {trims.map((trim, index) => (
         <div
           key={index}
@@ -41,6 +41,7 @@ const TrimsSection = () => {
             display: "flex",
             alignItems: "center",
             marginBottom: "10px",
+            backgroundColor: "#f3ececfe"
           }}
         >
           {/* Dropdown for trims */}
@@ -65,15 +66,9 @@ const TrimsSection = () => {
           <button
             type="button"
             onClick={() => removeTrim(index)}
-            style={{
-              padding: "5px",
-              backgroundColor: "red",
-              color: "white",
-              border: "none",
-              borderRadius: "3px",
-            }}
+           className="x-button"
           >
-            Remove
+            X
           </button>
         </div>
       ))}
@@ -82,14 +77,7 @@ const TrimsSection = () => {
       <button
         type="button"
         onClick={addTrim}
-        style={{
-          marginTop: "10px",
-          padding: "5px 10px",
-          backgroundColor: "green",
-          color: "white",
-          border: "none",
-          borderRadius: "3px",
-        }}
+       
       >
         Add More Trims
       </button>

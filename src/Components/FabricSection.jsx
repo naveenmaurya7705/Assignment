@@ -40,13 +40,14 @@ const FabricSection = ({ fabrics, onAddFabric, onUpdateFabric, onAddColor }) => 
         <div
           key={index}
           style={{
-            marginBottom: "20px",
+            marginBottom: "30px",
             border: "1px solid #ccc",
-            padding: "10px",
+            padding: "30px",
+            backgroundColor:"antiquewhite"
           }}
         >
           {/* Fabric Name Dropdown */}
-          
+
           <label>Fabric Name:</label>
           <select
             value={fabric.fabricName}
@@ -75,33 +76,37 @@ const FabricSection = ({ fabrics, onAddFabric, onUpdateFabric, onAddColor }) => 
             }}
            min="0.5"
            step="any"
+           style={{width:"93%",height:"25px" ,marginBottom:"20px "}}
            required
           />
 
+         
           {/* Choose Unit as Radio Buttons */}
-          <label>Choose Unit:</label>
-          <div>
-            <label>
-              <input
-                type="radio"
-                name={`unit-${index}`}
-                value="M"
-                checked={fabric.unit === "M"}
-                onChange={() => onUpdateFabric(index, "unit", "M")}
-              />
-              M
-            </label>
-            <label style={{ marginLeft: "10px" }}>
-              <input
-                type="radio"
-                name={`unit-${index}`}
-                value="Kg"
-                checked={fabric.unit === "Kg"}
-                onChange={() => onUpdateFabric(index, "unit", "Kg")}
-              />
-              Kg
-            </label>
-          </div>
+<label>Choose Unit:</label>
+<div className="radio-group">
+  <label>
+    <input
+      type="radio"
+      name={`unit-${index}`}
+      value="M"
+      checked={fabric.unit === "M"}
+      onChange={() => onUpdateFabric(index, "unit", "M")}
+    />
+    M
+  </label>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <label>
+    <input
+      type="radio"
+      name={`unit-${index}`}
+      value="Kg"
+      checked={fabric.unit === "Kg"}
+      onChange={() => onUpdateFabric(index, "unit", "Kg")}
+    />
+    Kg
+  </label>
+</div>
+
 
           {/* Processes Section */}
           <label>Processes:</label>
@@ -133,17 +138,10 @@ const FabricSection = ({ fabrics, onAddFabric, onUpdateFabric, onAddColor }) => 
                       fabric.processes.filter((p) => p !== process)
                     )
                   }
-                  style={{
-                    marginLeft: "10px",
-                    backgroundColor: "red",
-                    color: "white",
-                    border: "none",
-                    cursor: "pointer",
-                    padding: "5px",
-                    borderRadius: "50%",
-                  }}
+                  className="x-button"
+                 
                 >
-                  *
+                  X
                 </button>
               </div>
             ))}
@@ -167,6 +165,45 @@ const FabricSection = ({ fabrics, onAddFabric, onUpdateFabric, onAddColor }) => 
                   </option>
                 ))}
             </select>
+          </div>
+
+          {/* Color and Quantity: */}
+
+          <div>
+            <label>Color and Quantity:</label>
+            {fabric.colorAndQuantity.map((cq, cqIndex) => (
+              <div key={cqIndex} style={{ display: "flex", gap: "10px" }}>
+                <input
+                  type="text"
+                  value={cq.color}
+                  onChange={(e) =>
+                    onUpdateFabric(index, "colorAndQuantity", [
+                      ...fabric.colorAndQuantity.slice(0, cqIndex),
+                      { ...cq, color: e.target.value },
+                      ...fabric.colorAndQuantity.slice(cqIndex + 1),
+                    ])
+                  }
+                  placeholder="Color"
+                  required
+                />
+                <input
+                  type="number"
+                  value={cq.quantity}
+                  onChange={(e) =>
+                    onUpdateFabric(index, "colorAndQuantity", [
+                      ...fabric.colorAndQuantity.slice(0, cqIndex),
+                      { ...cq, quantity: e.target.value },
+                      ...fabric.colorAndQuantity.slice(cqIndex + 1),
+                    ])
+                  }
+                  placeholder="Quantity"
+                  required
+                />
+              </div>
+            ))}
+            <button type="button" onClick={() => onAddColor(index)}>
+              Add More Colors and Quantity
+            </button>
           </div>
 
           {/* Stages to Be Skipped Section */}
@@ -200,17 +237,9 @@ const FabricSection = ({ fabrics, onAddFabric, onUpdateFabric, onAddColor }) => 
                       fabric.stagesToSkip.filter((s) => s !== stage)
                     )
                   }
-                  style={{
-                    marginLeft: "10px",
-                    backgroundColor: "red",
-                    color: "white",
-                    border: "none",
-                    cursor: "pointer",
-                    padding: "5px",
-                    borderRadius: "50%",
-                  }}
+                      className="x-button"
                 >
-                  *
+                  X
                 </button>
               </div>
             ))}

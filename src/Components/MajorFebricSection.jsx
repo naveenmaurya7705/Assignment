@@ -22,8 +22,8 @@ const MajorFabricSection = ({ majorFabric, setMajorFabric }) => {
 
   return (
     <div style={{ marginTop: "20px" }}>
-      <h3>Choose Major Fabric</h3>
-      <label>Major Fabric:</label>
+    
+      <label>Choose Major Fabric:</label>
       <select
         value={majorFabric}
         onChange={(e) => setMajorFabric(e.target.value)}

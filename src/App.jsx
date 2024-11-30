@@ -6,7 +6,7 @@ import AccessoriesSection from "./Components/AccessoriesSection";
 import ChinaFabricSection from "./Components/ChinaFabricSection";
 import NumberField from "./Components/NumberFields";
 import MajorFabricSection from "./Components/MajorFebricSection";
-
+import './App.css'
 const App = () => {
   const [fabrics, setFabrics] = useState([
     {
@@ -22,9 +22,9 @@ const App = () => {
   const [chinaFabricPresent, setChinaFabricPresent] = useState(null);
   const [chinaFabrics, setChinaFabrics] = useState([]);
   const [trims, setTrims] = useState([{ trim: "" }]);
-  
-  const [productionPerDay, setProductionPerDay] = useState(5);
-  const [totalOrderQuantity, setTotalOrderQuantity] = useState(12000);
+
+  const [productionPerDay, setProductionPerDay] = useState(0);
+  const [totalOrderQuantity, setTotalOrderQuantity] = useState(0);
   const [accessories, setAccessories] = useState([]);
 
   const addFabric = () =>
@@ -96,7 +96,7 @@ const App = () => {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+   
     const formData = {
       productionPerDay,
       totalOrderQuantity,
@@ -119,6 +119,7 @@ const App = () => {
       });
   
       if (response.ok) {
+        console.log("Submitted Trims:", trims);
         console.log("Data saved successfully:", formData);
         alert("Form submitted successfully!");
   
@@ -143,10 +144,11 @@ const App = () => {
   
   return (
     <>
-      <h1>T&A DATA SUBMISSION FORM</h1>
+      <h1 style={{textAlign:'center'}}>T&A DATA SUBMISSION FORM</h1>
 
-      <form onSubmit={handleSubmit} style={{ padding: "20px" }}>
+      <form onSubmit={handleSubmit} style={{ padding: "20px" ,border:"2px solid" , padding:"50px"}} >
         {/* Date Fields */}
+        <div className="date-group">
         <DateField
           label="Start Date"
           name="startDate"
@@ -157,6 +159,7 @@ const App = () => {
           name="endDate"
           defaultValue={new Date().toISOString().split("T")[0]}
         />
+        </div>
 
         {/* Number Fields */}
         <NumberField
@@ -197,15 +200,18 @@ const App = () => {
 
         {/* Trims Section */}
         <TrimsSection
-  trims={trims}
-  onAddTrim={(value) => setTrims([...trims, value])}
-  onUpdateTrim={(index, value) => {
-    const updatedTrims = [...trims];
-    updatedTrims[index] = value;
-    setTrims(updatedTrims);
-  }}
-  onRemoveTrim={removeTrim} // Pass remove function
-/>
+        trims={trims}
+        onAddTrim={() => setTrims([...trims, { trim: "" }])}
+        onUpdateTrim={(index, value) => {
+          const updatedTrims = [...trims];
+          updatedTrims[index] = { trim: value };
+          setTrims(updatedTrims);
+        }}
+        onRemoveTrim={(indexToRemove) => {
+          const updatedTrims = trims.filter((_, index) => index !== indexToRemove);
+          setTrims(updatedTrims);
+        }}
+      />
 
         {/* Accessories Section */}
         <AccessoriesSection
@@ -215,7 +221,7 @@ const App = () => {
       />
 
         {/* Submit Button */}
-        <button type="submit">Submit</button>
+        <button className="submit-btn" type="submit">Submit</button>
       </form>
     </>
   );

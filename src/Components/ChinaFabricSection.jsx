@@ -41,9 +41,9 @@ const ChinaFabricSection = ({
   return (
     <div style={{ marginTop: "20px" }}>
       <h3>Is China Fabric Present?</h3>
-      <div>
+       {/* <div> */}
         {/* Radio buttons for Yes/No */}
-        <label>
+        {/* <label>
           <input
             type="radio"
             name="chinaFabricPresent"
@@ -66,11 +66,44 @@ const ChinaFabricSection = ({
           />
           No
         </label>
-      </div>
+      </div>  */}
+
+<div style={{ margin: "10px 0", fontFamily: "Arial, sans-serif" }}>
+<label
+  className="Radio-label"
+>
+  <input
+    type="radio"
+    name="chinaFabricPresent"
+    value="Yes"
+    checked={chinaFabricPresent === true}
+    onChange={() => setChinaFabricPresent(true)}
+    style={{ marginRight: "5px", accentColor: "#007bff" }}
+  />
+  Yes
+</label>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label
+  className="Radio-label"
+>
+  <input
+    type="radio"
+    name="chinaFabricPresent"
+    value="No"
+    checked={chinaFabricPresent === false}
+    onChange={() => {
+      setChinaFabricPresent(false);
+      setChinaFabrics([]); // Clear the selected fabrics if "No" is chosen
+    }}
+    style={{ marginRight: "5px", accentColor: "#007bff" }}
+  />
+  No
+</label>
+</div>
+
 
       {/* Conditional rendering of Select China Fabrics */}
       {chinaFabricPresent && (
-        <div style={{ marginTop: "15px" }}>
+        <div style={{ marginTop: "15px",backgroundColor: "#e6e2e2e7" }}>
           <h4>Selected China Fabrics:</h4>
           <div
             style={{
@@ -95,17 +128,8 @@ const ChinaFabricSection = ({
                 <span>{fabric}</span>
                 <button
                   onClick={() => handleRemoveFabric(fabric)}
-                  style={{
-                    marginLeft: "10px",
-                    backgroundColor: "red",
-                    color: "white",
-                    border: "none",
-                    cursor: "pointer",
-                    padding: "5px",
-                    borderRadius: "50%",
-                  }}
-                >
-                  *
+                  className="x-button"
+                >X
                 </button>
               </div>
             ))}
