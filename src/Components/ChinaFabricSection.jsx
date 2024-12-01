@@ -41,32 +41,7 @@ const ChinaFabricSection = ({
   return (
     <div style={{ marginTop: "20px" }}>
       <h3>Is China Fabric Present?</h3>
-       {/* <div> */}
-        {/* Radio buttons for Yes/No */}
-        {/* <label>
-          <input
-            type="radio"
-            name="chinaFabricPresent"
-            value="Yes"
-            checked={chinaFabricPresent === true}
-            onChange={() => setChinaFabricPresent(true)}
-          />
-          Yes
-        </label>
-        <label style={{ marginLeft: "15px" }}>
-          <input
-            type="radio"
-            name="chinaFabricPresent"
-            value="No"
-            checked={chinaFabricPresent === false}
-            onChange={() => {
-              setChinaFabricPresent(false);
-              setChinaFabrics([]); // Clear the selected fabrics if "No" is chosen
-            }}
-          />
-          No
-        </label>
-      </div>  */}
+    
 
 <div style={{ margin: "10px 0", fontFamily: "Arial, sans-serif" }}>
 <label

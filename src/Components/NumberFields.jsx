@@ -9,7 +9,7 @@ const NumberFields = ({ label, name, value, onChange }) => {
         name={name}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        
+        placeholder="Enter to the Quantity..!"
         required
       />
     </div>
