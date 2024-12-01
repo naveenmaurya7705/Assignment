@@ -157,14 +157,45 @@ button:hover {
 
 /* From submit button */
 .submit-btn{
-  margin: 40px 80px;
+  /* margin: 40px 0px; */
    width: 60vw;
 }
 
 /* Responsive design */
+
+/* Laptop/Desktop (Large Screens): Devices like laptops and desktops with larger screens. */
+
+
+@media (max-width: 1280px) {
+  /* Styles for laptops and desktops */
+  .submit-btn{
+    margin: 40px 20px;
+     width: 60vw;
+  }
+
+}
+
+ 
+
+
+/* Tablet (Medium Screens):Devices like tablets in portrait mode. */
+
 @media (max-width: 768px) {
+  /* Styles for tablets */
+  .submit-btn{
+    margin: 25px 15px;
+     width: 50vw;
+  }
   div {
     padding: 10px;
+  }
+
+  .date{
+  
+    width: 30%;
+    background-color: #e6e2e2e7;
+    padding: 10px 20px 10px;
+   
   }
 
   input
@@ -173,9 +204,25 @@ button:hover {
     font-weight: bold;
     width: 40vw;
     height: 20px;
-    padding:  10px; 
+
     
    
+  }
+  .date-group{
+    display: flex;
+    justify-content:first baseline;
+    align-items:safe;
+  
+  
+  }
+
+  .date input{
+    width: 15vw;
+    height:15px;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    flex-direction: column;
   }
 
   button {
@@ -187,6 +234,10 @@ button:hover {
     flex-direction: column;
   
   }
+}
+
+
+/* Mobile (Small Screens) Devices like smartphones in portrait mode.: */
 
   @media (max-width: 600px) {
     input
@@ -197,6 +248,27 @@ button:hover {
     height: 20px;
     padding:  10px; 
     
+  }
+
+  .date{
+  
+    width: 40%;
+    background-color: #e6e2e2e7;
+    padding: 10px 15px 10px;
    
   }
-  
+
+  .date input{
+    width: 18vw;
+    height:15px;
+    padding: 10px;
+   
+    flex-direction: column;
+  }
+
+
+  .submit-btn{
+    margin: 25px 15px;
+     width: 50vw;
+  }
+}

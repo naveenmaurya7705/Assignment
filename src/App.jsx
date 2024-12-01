@@ -146,7 +146,7 @@ const App = () => {
     <>
       <h1 style={{textAlign:'center'}}>T&A DATA SUBMISSION FORM</h1>
 
-      <form onSubmit={handleSubmit} style={{ padding: "20px" ,border:"2px solid" , padding:"50px"}} >
+      <form onSubmit={handleSubmit} style={{ padding: "50px" ,border:"2px solid" }} >
         {/* Date Fields */}
         <div className="date-group">
         <DateField

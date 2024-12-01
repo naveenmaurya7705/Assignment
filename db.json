@@ -43,6 +43,44 @@
       "accessories": [
         "WASHCARE LABEL"
       ]
+    },
+    {
+      "id": "1ed7",
+      "productionPerDay": 0,
+      "totalOrderQuantity": 0,
+      "fabrics": [
+        {
+          "fabricName": "VISCOUS LYCRA",
+          "perPieceRequirement": "6543",
+          "unit": "M",
+          "processes": [
+            "DYING"
+          ],
+          "colorAndQuantity": [
+            {
+              "color": "grey",
+              "quantity": "13"
+            }
+          ],
+          "stagesToSkip": [
+            "PRODUCTION"
+          ]
+        }
+      ],
+      "majorFabric": "LACES",
+      "chinaFabricPresent": true,
+      "chinaFabrics": [
+        "LACES",
+        "FRENCH TERRY"
+      ],
+      "trims": [
+        {
+          "trim": "STICKER"
+        }
+      ],
+      "accessories": [
+        "SIZE LABEL"
+      ]
     }
   ]
 }
